@@ -29,7 +29,7 @@ const clientSchema = new Schema({
     trim: true,
   },
 
-  status: {
+  Status: {
     type: String,
     required: true,
   },

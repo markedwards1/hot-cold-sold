@@ -1,0 +1,21 @@
+[
+  {
+    "username": "Mark",
+    "email": "mark@gmail.com",
+    "password": "password",
+    "clients": ["Client"]
+  },
+  {
+    "username": "Franky",
+    "email": "franky@gmail.com",
+    "password": "password",
+    "clients": ["Client"]
+  },
+  {
+    "username": "jon",
+    "email": "jon@gmail.com",
+    "password": "password",
+    "clients": ["Client"]
+  }
+  
+]
