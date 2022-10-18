@@ -2,13 +2,13 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import ThoughtList from '../components/ThoughtList';
-import ThoughtForm from '../components/ThoughtForm';
+import ThoughtForm from '../components/AddClient';
 
-import { QUERY_THOUGHTS } from '../utils/queries';
+import { ALL_CLIENT } from '../utils/queries';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_THOUGHTS);
-  const thoughts = data?.thoughts || [];
+  const { loading, data } = useQuery(ALL_CLIENT);
+  const clients = data?.clients || [];
 
   return (
     <main>
@@ -24,7 +24,7 @@ const Home = () => {
             <div>Loading...</div>
           ) : (
             <ThoughtList
-              thoughts={thoughts}
+              clients={clients}
               title="Some Feed for Thought(s)..."
             />
           )}

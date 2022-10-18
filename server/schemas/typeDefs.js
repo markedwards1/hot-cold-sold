@@ -37,6 +37,9 @@ const typeDefs = gql`
   type Query {
     users: [User]!
     user(username: String!): User
+
+    client: [Client]
+
     clients(name: String, phone: String, email: String, product: String, status: String): [Client]
     finduser(id: ID!): User
   }
@@ -45,9 +48,11 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
 
-    addClient(name: String, phone: String, email: String, product: String, note: String, createAt: String, status: String): Client,
+    addClient(name: String, phone: String, email: String, product: String, note: String, createAt: String, status: String): Client
 
     addContact(type: String text: String, createAt: String): Contact
+
+
     updateClient(name: String, phone: String, email: String, product: String, note: String): Client
     updateContact(type: String, text: String, createAt: String): Contact
     removeClient(clientId: ID!): Client

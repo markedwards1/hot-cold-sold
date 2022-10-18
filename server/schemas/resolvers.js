@@ -2,7 +2,7 @@ const { AuthenticationError } = require("apollo-server-express");
 // const path = require("path");
 const { User, Client } = require("../models");
 
-// const { signToken } = require("../utils/auth");
+const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
@@ -11,15 +11,14 @@ const resolvers = {
       return await User.findById(args.id);
     },
 
-    // users: async (parent, { _id, username, email })=> {
-    //   return await User.find(_id, username, email ).populate('clients');
-    // }
-   
+  
     users: async (parent, args) => {
       return await User.find({});
-    }
+    },
       
-    
+    clients: async (parent, args) => {
+      return await Client.find({})
+    }
     // user: async (parent, { client }) => {
     //   return await Client.find({}).populate('clients').populate({
     //     path: 'User',
@@ -65,19 +64,11 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addClient: async (parent, { name, phone, email, product, note, createAt, status }) => {
-      const client = await Client.create({ name, phone, email, product, note, createAt, status  });
-      const token = signToken(client);
-      return { token, client };
-    },
-
-
-
-
 
 
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
+      console.log(user);
       if (!user) {
         throw new AuthenticationError("No user found with this email address");
       }
@@ -88,19 +79,29 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    // addClient: async (parent, { name, phone, email, product, note, createdAt, status, contacts }) => {const client = await Client.create({ name, phone, email, product, note, createdAt, status, contacts, });
 
-    //   await User.findOneAndUpdate({ username }, { $addToSet: { client } });
-
-    //   return client;
-    // },
-
-    // addClient: async (parent, { name, phone, email, product, note, createdAt, status, contacts}) =>{
-     
+    addClient: async (parent, {  name, phone, email, product, note, createAt, status }, context) => {
+      if (context.user) {
+        const client = await Client.create({
+          name, phone, email, product, note, createAt, status
+          // thoughtText,
+          // thoughtAuthor: context.user.username,
+        });
         
-    //   return await Client.create({ name, phone, email, product, note, createdAt, status, contacts});
-      
-    // },
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { clients: client._id } }
+          );
+          
+          console.log(client);
+          return client;
+        }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+
+
+
 
     // addContact: async (parent, { type, text, contactedAt }) => {
     //   return Client.findOneAndUpdate(
