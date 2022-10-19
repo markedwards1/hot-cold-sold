@@ -2,46 +2,46 @@ const { Schema, model, now } = require('mongoose');
 // const Date = Date.now();
 
 const clientSchema = new Schema({
-  Name: {
+  name: {
     type: String,
-    required: true,
+    required: false,
     trim: true,
   },
-  Phone: {
+  phone: {
     type: String,
-    required: true,
+    required: false,
     trim: true
   },
-  Email: {
+  email: {
     type: String,
-    required: true,
+    required: false,
     unique: true,
     match: [/.+@.+\..+/, 'Must match an email address!'],    
   },
   product: {
     type: String,
-    required: true,
+    required: false,
   },
-  Note: {
+  note: {
     type: String,
     minlength: 1,
     
     trim: true,
   },
 
-  Status: {
+  status: {
     type: String,
-    required: true,
+    required: false,
   },
-  contacts: [
+  communication: [
     {
-      Type: {
+      type: {
         type: String,
-        required: true,
+        required: false,
       },
-      Text: {
+      text: {
         type: String,
-        required: true,
+        required: false,
         minlength: 1,
         },
       createAt: {
@@ -56,6 +56,6 @@ const clientSchema = new Schema({
 }
 );
 
-const Client = model('client', clientSchema);
+const Client = model('Client', clientSchema);
 
 module.exports = Client;

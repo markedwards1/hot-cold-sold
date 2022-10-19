@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
 
-import { ADD_CLIENT } from '../../utils/mutations';
-import { ALL_CLIENT } from '../../utils/queries';
+import { ADD_CLIENT } from "../../utils/mutations";
+import { ALL_CLIENT } from "../../utils/queries";
 
 const AddClientForm = () => {
   const [formState, setFormState] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    product: '',
-    note: '',
-    createdAt: '',
-    status: '',
+    name: "",
+    phone: "",
+    email: "",
+    product: "",
+    note: "",
+    createdAt: "",
+    status: "",
   });
- 
+
   const [addClient, { error }] = useMutation(ADD_CLIENT, {
     // All returning data from Apollo Client queries/mutations return in a `data` field, followed by the the data returned by the request
-    update(cache, { data: { addClient } }) {
+    update(cache, { data: { ADD_CLIENT } }) {
       try {
         const { clients } = cache.readQuery({ query: ALL_CLIENT });
 
@@ -40,13 +40,13 @@ const AddClientForm = () => {
       });
 
       setFormState({
-        name: '',
-        phone: '',
-        email: '',
-        product: '',
-        note: '',
-        createdAt: '',
-        status: '',
+        name: "",
+        phone: "",
+        email: "",
+        product: "",
+        note: "",
+        createdAt: "",
+        status: "",
       });
     } catch (err) {
       console.error(err);
@@ -54,21 +54,29 @@ const AddClientForm = () => {
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    const { target } = event;
+    const inputType = target.name;
+    const inputValue = target.value;
 
-    // if (name === 'thoughtText' && value.length <= 280) {
-    //   setFormState({ ...formState, [name]: value });
-    //   setCharacterCount(value.length);
-    // } else if (name !== 'thoughtText') {
-    //   setFormState({ ...formState, [name]: value });
-    // }
+    if (inputType === "name") {
+      setFormState(inputValue);
+    } else if (inputType === "phone") {
+      setFormState(inputValue);
+    } else if (inputType === "email") {
+      setFormState(inputValue);
+    } else if (inputType === "product") {
+      setFormState(inputValue);
+    } else if (inputType === "note") {
+      setFormState(inputValue);
+    } else if (inputType === "createdAt") {
+      setFormState(inputValue);
+    } else if (inputType === "status") {
+      setFormState(inputValue);
+    }
   };
 
   return (
     <div>
-     
-
-  
       <form
         className="flex-row justify-center justify-space-between-md align-center"
         onSubmit={handleFormSubmit}
@@ -79,7 +87,7 @@ const AddClientForm = () => {
             placeholder="Client Name"
             value={formState.name}
             className="form-input w-100"
-            style={{ lineHeight: '1.5' }}
+            style={{ lineHeight: "1.5" }}
             onChange={handleChange}
           ></textarea>
         </div>
@@ -101,7 +109,7 @@ const AddClientForm = () => {
             onChange={handleChange}
           />
         </div>
-               <div className="col-12 col-lg-9">
+        <div className="col-12 col-lg-9">
           <input
             name="product"
             placeholder="Product"
@@ -109,8 +117,8 @@ const AddClientForm = () => {
             className="form-input w-100"
             onChange={handleChange}
           />
-        </div>  
-             <div className="col-12 col-lg-9">
+        </div>
+        <div className="col-12 col-lg-9">
           <input
             name="note"
             placeholder="Notes"
@@ -118,8 +126,8 @@ const AddClientForm = () => {
             className="form-input w-100"
             onChange={handleChange}
           />
-
-        </div>       <div className="col-12 col-lg-9">
+        </div>{" "}
+        <div className="col-12 col-lg-9">
           <input
             name="status"
             placeholder="Status"
@@ -128,7 +136,6 @@ const AddClientForm = () => {
             onChange={handleChange}
           />
         </div>
-
         <div className="col-12 col-lg-3">
           <button className="btn btn-primary btn-block py-3" type="submit">
             Submit
