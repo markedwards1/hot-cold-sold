@@ -52,7 +52,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/add-client" element={<AddClient />} />
-              <Route path="/open-client" element={<OpenClient />} />
+              <Route path="/open-client/:clientId" element={<OpenClient />} />
 
 
             </Routes>

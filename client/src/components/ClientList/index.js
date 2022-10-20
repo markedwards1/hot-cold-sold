@@ -29,7 +29,7 @@ const ClientList = ({ clients, title }) => {
               {/* <p>communication: {client.communication.text}</p> */}
               
               <p>
-          <Link to={"/open-client"}>Open Client</Link>
+          <Link to={`/open-client/${client._id}`}>Open Client</Link>
         </p>
 
 

@@ -11,20 +11,20 @@ const CommunicationList = ({ communication = [] }) => {
         className="p-5 display-inline-block"
         style={{ borderBottom: '1px dotted #1a1a1a' }}
       >
-        Communicationss
+        Communications
       </h3>
       <div className="flex-row my-4">
-        {comments &&
-          comments.map((comment) => (
-            <div key={comment._id} className="col-12 mb-3 pb-3">
+        {communication &&
+          communication.map((coms) => (
+            <div key={coms._id} className="col-12 mb-3 pb-3">
               <div className="p-3 bg-dark text-light">
                 <h5 className="card-header">
-                  {comment.commentAuthor} commented{' '}
+                  {coms.type} commented{' '}
                   <span style={{ fontSize: '0.825rem' }}>
-                    on {comment.createdAt}
+                    on {coms.createdAt}
                   </span>
                 </h5>
-                <p className="card-body">{comment.commentText}</p>
+                <p className="card-body">{coms.text}</p>
               </div>
             </div>
           ))}
@@ -33,4 +33,4 @@ const CommunicationList = ({ communication = [] }) => {
   );
 };
 
-export default CommentList;
+export default CommunicationList;

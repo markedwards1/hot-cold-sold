@@ -32,7 +32,7 @@ query findUser($username: String!){
 
 `;
 
-export const FIND_CLIENT = gql`
+export const OPEN_CLIENT = gql`
 query findClient($findClientId: ID!){
   findClient(id: $findClientId) {
     _id
@@ -52,4 +52,4 @@ query findClient($findClientId: ID!){
   }
 }
 
-`
+`;

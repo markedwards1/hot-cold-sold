@@ -1,13 +1,12 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-// import ThoughtList from '../components/ThoughtList';
-// import ThoughtForm from '../components/AddClient';
+
 
 
 
 import { ALL_CLIENT } from '../utils/queries';
-import AddClientForm from '../components/AddClient';
+
 import ClientList from '../components/ClientList';
 
 

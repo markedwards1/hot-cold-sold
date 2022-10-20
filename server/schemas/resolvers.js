@@ -20,7 +20,7 @@ const resolvers = {
     clients: async (parent, args) => {
       return await Client.find({});
     },
-
+//possibly need to populate 'communication'
     async findClient(parent, args) {
       console.log(args.id);
       return await Client.findById(args.id);
