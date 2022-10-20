@@ -14,6 +14,9 @@ const Header = () => {
         <p>
           <Link to={"/"}>Home</Link>
         </p>
+        <p>
+          <Link to={"/add-client"}>Add Client</Link>
+        </p>
 
         {/* </Button> */}
       </div>

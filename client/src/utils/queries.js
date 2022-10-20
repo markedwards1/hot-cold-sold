@@ -10,8 +10,46 @@ query allClient {
     phone
     product
     status
+    createdAt
   }
 }
 `;
 
 
+export const USER = gql`
+query findUser($username: String!){
+  findUser(username: $username) {
+    _id
+    username
+    email
+    clients {
+      _id
+      name
+    }
+  }
+}
+
+
+`;
+
+export const FIND_CLIENT = gql`
+query findClient($findClientId: ID!){
+  findClient(id: $findClientId) {
+    _id
+    name
+    phone
+    email
+    product
+    note
+    createdAt
+    status
+    communication {
+      _id
+      type
+      text
+      createAt
+    }
+  }
+}
+
+`

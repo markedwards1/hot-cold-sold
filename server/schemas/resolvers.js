@@ -25,6 +25,7 @@ const resolvers = {
       console.log(args.id);
       return await Client.findById(args.id);
     },
+
   },
 
   Mutation: {

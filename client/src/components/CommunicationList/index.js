@@ -1,8 +1,8 @@
 import React from 'react';
 
-const CommentList = ({ comments = [] }) => {
-  if (!comments.length) {
-    return <h3>No Comments Yet</h3>;
+const CommunicationList = ({ communication = [] }) => {
+  if (!communication.length) {
+    return <h3>Get in touch with your clients already</h3>;
   }
 
   return (
@@ -11,7 +11,7 @@ const CommentList = ({ comments = [] }) => {
         className="p-5 display-inline-block"
         style={{ borderBottom: '1px dotted #1a1a1a' }}
       >
-        Comments
+        Communicationss
       </h3>
       <div className="flex-row my-4">
         {comments &&

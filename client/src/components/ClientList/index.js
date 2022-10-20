@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ClientList = ({ clients, title }) => {
   if (!clients.length) {
@@ -12,10 +13,10 @@ const ClientList = ({ clients, title }) => {
         clients.map((client) => (
           <div key={client._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
-              {client.name} <br />
+              Client: {client.name} <br />
               
               <span style={{ fontSize: '1rem' }}>
-                had this client on {client.createdAt}
+             
               </span>
             </h4>
             <div className="card-body bg-light p-2">
@@ -24,7 +25,14 @@ const ClientList = ({ clients, title }) => {
               <p>note: {client.note}</p>
               <p>Client since: {client.createdAt}</p>
               <p>Status: {client.status}</p>
+              <p>Phone: {client.phone}</p>
               {/* <p>communication: {client.communication.text}</p> */}
+              
+              <p>
+          <Link to={"/open-client"}>Open Client</Link>
+        </p>
+
+
             </div>
           </div>
         ))}
