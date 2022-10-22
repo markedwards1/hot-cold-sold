@@ -1,5 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import auth from "../../utils/auth";
+
+
+
+const logout = (event) => {
+  event.preventDefault();
+  auth.logout();
+};
+
 
 const Header = () => {
   return (
@@ -17,6 +26,10 @@ const Header = () => {
         <p>
           <Link to={"/add-client"}>Add Client</Link>
         </p>
+        <button className="btn btn-lg btn-light m-2" onClick={logout}>
+                Logout
+              </button>
+      
 
         {/* </Button> */}
       </div>
