@@ -13,6 +13,10 @@ import AddClient from "./pages/Addclient";
 import Login from "./pages/Login";
 import OpenClient from "./pages/OpenClient";
 import AddComs from "./components/AddComs/index"
+import Signup from "./pages/AddUser";
+import MyClients from "./pages/MyClients";
+
+
 
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -54,6 +58,9 @@ function App() {
               <Route path="/add-client" element={<AddClient />} />
               <Route path="/open-client/:clientId" element={<OpenClient />} />
               <Route path="/add-communication/:clientId" element={<AddComs />} />
+              <Route path="/add-user" element={<Signup />} />
+              <Route path="/my-clients/" element={<MyClients />} />
+
 
             </Routes>
           </div>

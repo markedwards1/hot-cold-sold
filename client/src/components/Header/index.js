@@ -10,6 +10,9 @@ const logout = (event) => {
 };
 
 
+
+
+
 const Header = () => {
   return (
     <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
@@ -26,10 +29,15 @@ const Header = () => {
         <p>
           <Link to={"/add-client"}>Add Client</Link>
         </p>
+        <p>
+          <Link to={"/add-user"}>Add User</Link>
+        </p>
         <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
-      
+         <p>
+         <Link to={"/my-clients"}>My Clients</Link>
+         </p>
 
         {/* </Button> */}
       </div>

@@ -40,6 +40,7 @@ const typeDefs = gql`
     clients: [Client]
     findClient(id: ID!): Client
    
+   
     
   }
 
