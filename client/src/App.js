@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import AddClient from "./pages/Addclient";
 import Login from "./pages/Login";
 import OpenClient from "./pages/OpenClient";
-
+import AddComs from "./components/AddComs/index"
 
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -53,7 +53,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/add-client" element={<AddClient />} />
               <Route path="/open-client/:clientId" element={<OpenClient />} />
-
+              <Route path="/add-communication/:clientId" element={<AddComs />} />
 
             </Routes>
           </div>

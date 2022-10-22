@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 // import ClientList from '../components/ClientList';
 import CommunicationList from "../components/CommunicationList";
+import Addcoms from "../components/AddComs"
+
 import { OPEN_CLIENT } from "../utils/queries";
 
 const OpenClient = () => {
@@ -57,6 +59,7 @@ const OpenClient = () => {
       <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
       
         Add Communication
+          <Addcoms />
       </div>
     </div>
   );

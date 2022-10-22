@@ -23,6 +23,25 @@ mutation HCSMutation($email: String!, $password: String!) {
     }
   }
 }
-
-
 `;
+
+export const ADD_COMMUNICATION = gql`
+mutation AddCommunication($clientId: ID!, $type: String, $text: String, $addCommunicationCreateAt2: String) {
+  addCommunication(clientId: $clientId, type: $type, text: $text, createAt: $addCommunicationCreateAt2) {
+    _id
+    name
+    phone
+    communication {
+      _id
+      type
+      text
+      createAt
+    }
+  }
+}
+
+
+
+
+
+`
