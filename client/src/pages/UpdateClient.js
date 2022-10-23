@@ -1,18 +1,21 @@
 import React from "react";
 
 // Import the `useParams()` hook
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 // import ClientList from '../components/ClientList';
-import CommunicationList from "../components/CommunicationList";
-import Addcoms from "../components/AddComs"
+// import CommunicationList from "../components/CommunicationList";
+// import Addcoms from "../components/AddComs"
 
 
 
 import { OPEN_CLIENT } from "../utils/queries";
-import MyClientList from "../components/MyClientsList";
+import { UPDATE_CLIENT } from "../utils/mutations";
+import UpdateClientForm from "../components/UpdateClientForm";
+ 
+// import MyClientList from "../components/MyClientsList";
 
-const OpenClient = () => {
+const UpdateClient = () => {
  
   const { clientId } = useParams();
 
@@ -55,23 +58,26 @@ const OpenClient = () => {
           <p>Status: {client.status}</p>
           <p>Note: {client.note}</p>
           <p>Product: {client.product}</p>
-          <p>
+          {/* <p>
             <Link to={`/update-client/${client._id}`} >UPDATE</Link>
-          </p>
+          </p> */}
          
         </blockquote>
       </div>
+<div>
+<UpdateClientForm/>
+</div>
 
-      <div className="my-5">
+      {/* <div className="my-5">
         <CommunicationList communication={client.communication} />
-      </div>
-      <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
+      </div> */}
+      {/* <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
       
         Add Communication
           <Addcoms />
-      </div>
+      </div> */}
     </div>
   );
 };
 
-export default OpenClient;
+export default UpdateClient;

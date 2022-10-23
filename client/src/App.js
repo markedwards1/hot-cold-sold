@@ -17,6 +17,7 @@ import Signup from "./pages/AddUser";
 import MyClients from "./pages/MyClients";
 
 
+import UpdateClient from "./pages/UpdateClient";
 
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -60,6 +61,8 @@ function App() {
               <Route path="/add-communication/:clientId" element={<AddComs />} />
               <Route path="/add-user" element={<Signup />} />
               <Route path="/my-clients/" element={<MyClients />} />
+              <Route path="/update-client/:clientId" element={<UpdateClient />} />
+
 
 
             </Routes>

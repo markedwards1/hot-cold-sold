@@ -52,6 +52,20 @@ mutation addUser($username: String!, $email: String!, $password: String!){
     }
   }
 }
+`;
 
+export const UPDATE_CLIENT = gql`
+mutation updateClient($clientId: ID, $name: String, $phone: String, $email: String, $product: String, $note: String, $createAt: String, $status: String){
+  updateClient(clientId: $clientId, name: $name, phone: $phone, email: $email, product: $product, note: $note, createAt: $createAt, status: $status) {
+    _id
+    name
+    phone
+    email
+    product
+    note
+    createdAt
+    status
+  }
+}
 
 `
