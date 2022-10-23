@@ -11,6 +11,7 @@ import Addcoms from "../components/AddComs"
 
 import { OPEN_CLIENT } from "../utils/queries";
 import MyClientList from "../components/MyClientsList";
+import Header from "../components/Header";
 
 const OpenClient = () => {
  
@@ -34,6 +35,7 @@ const OpenClient = () => {
 
   return (
     <div className="my-3">
+      <Header/>
           <div className="bg-light py-4">
     <p>
 

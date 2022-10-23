@@ -154,45 +154,14 @@ const resolvers = {
       throw new AuthenticationError("Girlfirend, you better log in!!!!");
     },
 
-    removeClient: async (parent, { clientId, name, phone, email, product, note, createAt, status }, context ) => {
+    removeClient: async (parent, { clientId }, context ) => {
       if(context.user){
-        return await Client.findByIdAndUpdate(
-          {_id: clientId},
-          { _id, name, phone, email, product, note, createAt, status }
-        )
+        return await Client.findByIdAndDelete({_id: clientId});
       }
       throw new AuthenticationError("Girlfirend, you better log in!!!!");
     }
 
-    // updateClient: async (parent, {  name, phone, email, product, note, createAt, status }, context) => {
-    //   if (context.user) {
-    //     const client = await Client.updateOne({
-    //       name, phone, email, product, note, createAt, status
 
-    //     });
-    //     console.log(client)
-
-    //     await User.findOneAndUpdate(
-    //       { _id: context.user._id },
-    //       { $addToSet: { clients: client._id } }
-    //       );
-
-    //       console.log(client);
-    //       return client;
-    //     }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // }
-
-    // removeClient: async (parent, { clientId }) => {
-    //   return Client.findOneAndDelete({ _id: clientId });
-    // },
-    // removeContact: async (parent, { contactId }) => {
-    //   return Client.findOneAndUpdate(
-    //     { _id: clientId },
-    //     { $pull: { contact: { _id: contactId } } },
-    //     { new: true }
-    //   );
-    // },
   },
 };
 

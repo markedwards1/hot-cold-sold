@@ -1,6 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// const handleClick = async () => {
+//   const response = await fetch('hot-cold-sold/clients/' + client.id, {
+//     method: 'DELETE'
+//   })
+// }
+
+
+
+
+
+
+
+
 const MyClientList = ({ clients, title }) => {
   if (!clients.length) {
     return <h3>No Leads</h3>;
@@ -27,10 +40,10 @@ const MyClientList = ({ clients, title }) => {
               <p>Status: {client.status}</p>
               <p>Phone: {client.phone}</p>
               {/* <p>communication: {client.communication.text}</p> */}
-              
-              <p>
+              {/* <span onClick={handleClick}>Delete</span> */}
+              {/* <p>
           <Link to={`/open-client/${client._id}`}>Open Client</Link>
-        </p>
+        </p> */}
 
 
             </div>

@@ -12,6 +12,8 @@ import { useQuery } from "@apollo/client";
 import { OPEN_CLIENT } from "../utils/queries";
 import { UPDATE_CLIENT } from "../utils/mutations";
 import UpdateClientForm from "../components/UpdateClientForm";
+import DeleteClientButton from "../components/DeleteClient/DeleteClientButton";
+import Header from "../components/Header";
  
 // import MyClientList from "../components/MyClientsList";
 
@@ -37,6 +39,7 @@ const UpdateClient = () => {
 
   return (
     <div className="my-3">
+       <Header/>
           <div className="bg-light py-4">
     <p>
 
@@ -58,6 +61,7 @@ const UpdateClient = () => {
           <p>Status: {client.status}</p>
           <p>Note: {client.note}</p>
           <p>Product: {client.product}</p>
+          <DeleteClientButton/>
           {/* <p>
             <Link to={`/update-client/${client._id}`} >UPDATE</Link>
           </p> */}
@@ -66,6 +70,7 @@ const UpdateClient = () => {
       </div>
 <div>
 <UpdateClientForm/>
+
 </div>
 
       {/* <div className="my-5">

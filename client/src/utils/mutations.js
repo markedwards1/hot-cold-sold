@@ -68,4 +68,17 @@ mutation updateClient($clientId: ID, $name: String, $phone: String, $email: Stri
   }
 }
 
+`;
+
+export const DELETE_CLIENT = gql`
+mutation removeClient($clientId: ID){
+  removeClient(clientId: $clientId) {
+    _id
+    name
+    phone
+    email
+  }
+}
+
+
 `

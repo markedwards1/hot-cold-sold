@@ -21,7 +21,7 @@ const AddClientForm = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-
+    window.location.reload();
     try {
       const { data } = await addClient({
         variables: {
