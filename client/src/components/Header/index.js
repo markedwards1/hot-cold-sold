@@ -35,9 +35,7 @@ const Header = () => {
         <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
-         <p>
-         <Link to={"/my-clients"}>My Clients</Link>
-         </p>
+   
 
         {/* </Button> */}
       </div>

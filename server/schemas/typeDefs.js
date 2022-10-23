@@ -39,7 +39,7 @@ const typeDefs = gql`
     findUser(username: String!): User
     clients: [Client]
     findClient(id: ID!): Client
-   
+    me: User
    
     
   }

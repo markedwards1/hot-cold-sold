@@ -1,13 +1,16 @@
 import React from "react";
 
 // Import the `useParams()` hook
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 // import ClientList from '../components/ClientList';
 import CommunicationList from "../components/CommunicationList";
 import Addcoms from "../components/AddComs"
 
+
+
 import { OPEN_CLIENT } from "../utils/queries";
+import MyClientList from "../components/MyClientsList";
 
 const OpenClient = () => {
 
@@ -31,6 +34,9 @@ const OpenClient = () => {
 
   return (
     <div className="my-3">
+    <p>
+
+    </p>
       <h3 className="card-header bg-dark text-light p-2 m-0">
         {client.name} <br />
       </h3>

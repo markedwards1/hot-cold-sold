@@ -25,6 +25,16 @@ const resolvers = {
       console.log(args.id);
       return await Client.findById(args.id);
     },
+    
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({ _id: context.user._id }).populate('clients');
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+
+
+
 
   },
 
