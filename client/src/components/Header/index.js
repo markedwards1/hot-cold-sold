@@ -20,17 +20,20 @@ const Header = () => {
         <h1 className="m-0">Hot Cold Sold </h1>
         <p className="m-0">Client Management System.</p>
         {/* <Button color="inherit"> */}
-        <p>
+        {/* <p>
           <Link to={"/login"}>Login</Link>
-        </p>
-        <p>
+        </p> */}
+        {/* <p>
           <Link to={"/"}>Home</Link>
-        </p>
+        </p> */}
         <p>
           <Link to={"/add-client"}>Add Client</Link>
         </p>
         <p>
           <Link to={"/add-user"}>Add User</Link>
+        </p>
+        <p>
+          <Link to={"/my-clients"}>Clients</Link>
         </p>
         <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
