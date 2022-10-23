@@ -51,20 +51,21 @@ const CommentForm = (  ) => {
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
-              <textarea
+              <input
                 name="type"
                 placeholder="Phone, text, email"
                 value={type}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
             <div className="col-12 col-lg-9">
               <textarea
                 name="text"
                 placeholder="How did it go?"
                 value={text}
+                cols="96"
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
                 onChange={handleChange}

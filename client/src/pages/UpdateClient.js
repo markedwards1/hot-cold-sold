@@ -7,18 +7,15 @@ import { useQuery } from "@apollo/client";
 // import CommunicationList from "../components/CommunicationList";
 // import Addcoms from "../components/AddComs"
 
-
-
 import { OPEN_CLIENT } from "../utils/queries";
 import { UPDATE_CLIENT } from "../utils/mutations";
 import UpdateClientForm from "../components/UpdateClientForm";
 import DeleteClientButton from "../components/DeleteClient/DeleteClientButton";
 import Header from "../components/Header";
- 
+
 // import MyClientList from "../components/MyClientsList";
 
 const UpdateClient = () => {
- 
   const { clientId } = useParams();
 
   const { loading, data } = useQuery(OPEN_CLIENT, {
@@ -39,48 +36,28 @@ const UpdateClient = () => {
 
   return (
     <div className="my-3">
-       <Header/>
-          <div className="bg-light py-4">
-    <p>
+      <Header />
+      <h4 class="card-heading">{client.name}</h4>
 
-    </p>
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {client.name} <br />
-      </h3>
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: "1.5rem",
-            fontStyle: "italic",
-            border: "2px dotted #1a1a1a",
-            lineHeight: "1.5",
-          }}
-        >
+      <div class="row">
+        <div class="col">
           <p>Phone: {client.phone}</p>
           <p>Email: {client.email}</p>
           <p>Status: {client.status}</p>
-          <p>Note: {client.note}</p>
+        </div>
+        <div class="col">
           <p>Product: {client.product}</p>
-          <DeleteClientButton/>
-          {/* <p>
-            <Link to={`/update-client/${client._id}`} >UPDATE</Link>
-          </p> */}
-         
-        </blockquote>
+          <p>Note: {client.note}</p>
+          {/* <p>Client since: {client.createdAt}</p> */}
+          <DeleteClientButton />
+        </div>
       </div>
-<div>
-<UpdateClientForm/>
+        <UpdateClientForm />
 
-</div>
-
-      {/* <div className="my-5">
-        <CommunicationList communication={client.communication} />
-      </div> */}
-      {/* <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
       
-        Add Communication
-          <Addcoms />
-      </div> */}
+      
+
+
     </div>
   );
 };

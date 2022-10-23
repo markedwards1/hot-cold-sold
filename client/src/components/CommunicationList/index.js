@@ -19,10 +19,10 @@ const CommunicationList = ({ communication = [] }) => {
             <div key={coms._id} className="col-12 mb-3 pb-3">
               <div className="p-3 bg-dark text-light">
                 <h5 className="card-header">
-                  {coms.type} commented{' '}
-                  <span style={{ fontSize: '0.825rem' }}>
+                  {coms.type} 
+                  {/* <span style={{ fontSize: '0.825rem' }}>
                     on {coms.createdAt}
-                  </span>
+                  </span> */}
                 </h5>
                 <p className="card-body">{coms.text}</p>
               </div>

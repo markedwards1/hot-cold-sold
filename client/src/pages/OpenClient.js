@@ -10,7 +10,7 @@ import Addcoms from "../components/AddComs"
 
 
 import { OPEN_CLIENT } from "../utils/queries";
-import MyClientList from "../components/MyClientsList";
+
 import Header from "../components/Header";
 
 const OpenClient = () => {
@@ -36,41 +36,36 @@ const OpenClient = () => {
   return (
     <div className="my-3">
       <Header/>
-          <div className="bg-light py-4">
-    <p>
+       <div key={client._id} className="card mb-3">
+            <h4 class="card-heading">{client.name}</h4>
 
-    </p>
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {client.name} <br />
-      </h3>
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: "1.5rem",
-            fontStyle: "italic",
-            border: "2px dotted #1a1a1a",
-            lineHeight: "1.5",
-          }}
-        >
-          <p>Phone: {client.phone}</p>
-          <p>Email: {client.email}</p>
-          <p>Status: {client.status}</p>
-          <p>Note: {client.note}</p>
-          <p>Product: {client.product}</p>
-          <p>
+            <div class="row">
+              <div class="col">
+                <p>Phone: {client.phone}</p>
+                <p>Email: {client.email}</p>
+                <p>Status: {client.status}</p>
+              </div>
+              <div class="col">
+                <p>Product: {client.product}</p>
+                <p>Note: {client.note}</p>
+                {/* <p>Client since: {client.createdAt}</p> */}
+              </div>
+            </div>
+            <p>
             <Link to={`/update-client/${client._id}`} >UPDATE</Link>
           </p>
-         
-        </blockquote>
-      </div>
-
       <div className="my-5">
+          <Addcoms />
         <CommunicationList communication={client.communication} />
       </div>
+          </div>
+          <div className="bg-light py-4">
+
+      </div>
+
       <div className="m-3 p-4" style={{ border: "1px dotted #1a1a1a" }}>
       
-        Add Communication
-          <Addcoms />
+       
       </div>
     </div>
   );

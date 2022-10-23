@@ -68,11 +68,104 @@ const AddClientForm = () => {
 
   return (
     <div>
-      <h3>Add New Client</h3>
+ <div class="card">
+ <h4>Add Client</h4>
+
+
+ {Auth.loggedIn() ? (
+        <>
+          <form
+            className="flex-row justify-center justify-space-between-md align-center"
+            onSubmit={handleFormSubmit}
+          >
+            <div className="col-12 col-lg-9">
+              <input
+                name="name"
+                placeholder="Add name"
+                value={name}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></input>
+            </div>
+            <div className="col-12 col-lg-9">
+              <input
+                name="email"
+                placeholder="Add email"
+                value={email}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></input>
+            </div>
+            <div className="col-12 col-lg-9">
+              <input
+                name="phone"
+                placeholder="Add phone"
+                value={phone}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></input>
+            </div>
+            <div className="col-12 col-lg-9">
+              <input
+                name="product"
+                placeholder="Add product"
+                value={product}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></input>
+            </div>
+            <div className="col-12 col-lg-9">
+              <input
+                name="status"
+                placeholder="Add status"
+                value={status}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></input>
+            </div>
+            <div className="">
+              <textarea
+                name="note"
+                placeholder="Add note"
+                value={note}
+                rows="5"
+                cols="95"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+            </div>
+
+            <div className="col-12 col-lg-3">
+              <button className="btn btn-primary btn-block py-3" type="submit">
+                Add Client
+              </button>
+            </div>
+            {error && (
+              <div className="col-12 my-3 bg-danger text-white p-3">
+                {error.message}
+              </div>
+            )}
+          </form>
+        </>
+      ) : (
+        <p>
+          You need to be logged in to share your thoughts. Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+        </p>
+      )}
+
+
+ 
+</div>
+      {/* <h3>Add New Client</h3>
 
       {Auth.loggedIn() ? (
         <>
- 
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
@@ -155,7 +248,7 @@ const AddClientForm = () => {
           You need to be logged in to share your thoughts. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
-      )}
+      )} */}
     </div>
   );
 };

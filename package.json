@@ -17,6 +17,8 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/material": "^5.10.10",
     "jwt-decode": "^3.1.2",
     "react-router-dom": "^6.4.2"
   }

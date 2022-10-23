@@ -34,13 +34,14 @@ const Home = () => {
               </Link> */}
           </>
         )}
+         
       </div>
       <div className="flex-row justify-center">
         <div className="col-12 col-md-8 mb-3">
           {loading ? (
             <div>Loading...</div>
-          ) : (
-            <Login/>
+            ) : (
+              <Login/>
             // <ClientList clients={clients} title="All Clients" />
           )}
         </div>

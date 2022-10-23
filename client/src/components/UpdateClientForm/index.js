@@ -83,64 +83,64 @@ const UpdateClientForm = () => {
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
-              <textarea
+              <input
                 name="name"
                 placeholder="name"
                 value={name}
-                className="form-input w-100"
+                className="form-input w-50"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
             <div className="col-12 col-lg-9">
-              <textarea
+              <input
                 name="email"
                 placeholder="Add email"
                 value={email}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
             <div className="col-12 col-lg-9">
-              <textarea
+              <input
                 name="note"
                 placeholder="Add note"
                 value={note}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
             <div className="col-12 col-lg-9">
-              <textarea
+              <input
                 name="phone"
                 placeholder="Add phone"
                 value={phone}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
             <div className="col-12 col-lg-9">
-              <textarea
+              <input
                 name="product"
                 placeholder="Add product"
                 value={product}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
             <div className="col-12 col-lg-9">
-              <textarea
+              <input
                 name="status"
                 placeholder="Add status"
                 value={status}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
-              ></textarea>
+              ></input>
             </div>
 
             <div className="col-12 col-lg-3">

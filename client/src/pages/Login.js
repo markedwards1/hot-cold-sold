@@ -5,6 +5,14 @@ import { LOGIN_USER } from '../utils/mutations';
 
 import Auth from '../utils/auth';
 
+
+
+
+
+
+
+
+
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
@@ -42,10 +50,12 @@ const Login = (props) => {
   };
 
   return (
+    
     <main className="flex-row justify-center mb-4 ">
       <div className="col-12 col-lg-12">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-3">Login</h4>
+        <h4>Client Management System</h4>
+        <div className="card ">
+          <h4 className="">Login</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -55,7 +65,7 @@ const Login = (props) => {
             ) : (
               <form onSubmit={handleFormSubmit}>
                 <input
-                  className="form-input"
+                  className=""
                   placeholder="Your email"
                   name="email"
                   type="email"
@@ -63,7 +73,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <input
-                  className="form-input"
+                  className=""
                   placeholder="******"
                   name="password"
                   type="password"
@@ -71,12 +81,15 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className=""
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
                   Submit
                 </button>
+                <p>
+                  <Link to={'/add-user'}>Add User</Link>
+                </p>
               </form>
             )}
 
@@ -88,6 +101,7 @@ const Login = (props) => {
           </div>
         </div>
       </div>
+     
     </main>
   );
 };

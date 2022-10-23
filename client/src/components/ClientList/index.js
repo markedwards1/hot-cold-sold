@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const ClientList = ({ clients, title }) => {
   if (!clients.length) {
@@ -12,28 +12,23 @@ const ClientList = ({ clients, title }) => {
       {clients &&
         clients.map((client) => (
           <div key={client._id} className="card mb-3">
-            <h4 className="card-header bg-primary text-light p-2 m-0">
-              Client: {client.name} <br />
-              
-              <span style={{ fontSize: '1rem' }}>
-             
-              </span>
-            </h4>
-            <div className="card-body bg-light p-2">
-              <p>email: {client.email}</p>
-              <p>product: {client.product}</p>
-              <p>note: {client.note}</p>
-              <p>Client since: {client.createdAt}</p>
-              <p>Status: {client.status}</p>
-              <p>Phone: {client.phone}</p>
-              {/* <p>communication: {client.communication.text}</p> */}
-              
-              <p>
-          <Link to={`/open-client/${client._id}`}>Open Client</Link>
-        </p>
+            <h4 class="card-heading">{client.name}</h4>
 
-
+            <div class="row">
+              <div class="col">
+                <p>Phone: {client.phone}</p>
+                <p>Email: {client.email}</p>
+                <p>Status: {client.status}</p>
+              </div>
+              <div class="col">
+                <p>Product: {client.product}</p>
+                <p>Note: {client.note}</p>
+                {/* <p>Client since: {client.createdAt}</p> */}
+              </div>
             </div>
+            <p>
+              <Link to={`/open-client/${client._id}`}>Open Client</Link>{" "}
+            </p>
           </div>
         ))}
     </div>
