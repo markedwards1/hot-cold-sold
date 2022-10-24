@@ -87,7 +87,7 @@ const UpdateClientForm = () => {
                 name="name"
                 placeholder="name"
                 value={name}
-                className="form-input w-50"
+                className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
               ></input>
@@ -157,7 +157,7 @@ const UpdateClientForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
+          Log in already!!! Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

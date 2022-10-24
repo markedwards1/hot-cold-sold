@@ -34,8 +34,11 @@ const OpenClient = () => {
   }
 
   return (
-    <div className="my-3">
+      <div className="my-3">
+    {/* <nav> */}
+
       <Header/>
+    {/* </nav> */}
        <div key={client._id} className="card mb-3">
             <h4 class="card-heading">{client.name}</h4>
 

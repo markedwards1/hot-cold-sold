@@ -81,7 +81,7 @@ const CommentForm = (  ) => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{" "}
+          Hey, You're not logged in. Please{" "}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}

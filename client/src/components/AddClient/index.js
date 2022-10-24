@@ -154,8 +154,8 @@ const AddClientForm = () => {
         </>
       ) : (
         <p>
-          You need to be logged in to share your thoughts. Please{' '}
-          <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
+          Hey Girlfriend, you better log in!!. Please{' '}
+          <Link to="/login">login</Link> or <Link to="/signup">Add User.</Link>
         </p>
       )}
 
